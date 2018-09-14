@@ -1,15 +1,24 @@
-#In an env setup Keras, TensorFlow, and OpenCV
-mkvirtualenv lotusx-cv-ml -p python3
-workon lotusx-cv-ml
+#Ec2 Ubuntu Instance OpenCV and Keras Lab:
+#In an env setup Keras, TensorFlow, and OpenCV will be running.
+virtualevn lotusx-cv-ml -p python3
+source lotusx-cv-ml/bin/activate
+
+
 
 pip install numpy
+pip install --upgrade imutils
+pip install --upgrade scikit-learn
+pip install --upgrade matplotlib
+pip install opencv-contrib-python #cv2 from pip
 
+
+#CV manual compile
 brew install cmake pkg-config
 brew install jpeg libpng libtiff openexr
 brew install eigen tbb
 
 
-cd ~/downloads/Opencv
+cd /opt/Opencv
 git clone https://github.com/opencv/opencv
 git clone https://github.com/opencv/opencv_contrib
 
@@ -39,10 +48,6 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 make -j4
 sudo make install
 #Rename and sym-link your OpenCV 3 + Python 3.5 bindings
-
-pip install --upgrade imutils
-pip install --upgrade scikit-learn
-pip install --upgrade matplotlib
 
 
 #ref. https://www.pyimagesearch.com/2016/12/05/macos-install-opencv-3-and-python-3-5/
